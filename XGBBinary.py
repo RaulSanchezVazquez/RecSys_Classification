@@ -165,10 +165,10 @@ class XGBBinary(BaseEstimator, ClassifierMixin):
             pd.Series(train_index), 
             pd.Series(test_index)])
         
+        n_folds = len(folds) 
+        n_combinations = len(hyperparam_space)
+        
         if self.verbose:
-            n_folds = len(folds) 
-            n_combinations = len(hyperparam_space)
-            
             msg = "Fitting %s models...\n"
             if self.verbose:
                 print(msg % (n_combinations))
